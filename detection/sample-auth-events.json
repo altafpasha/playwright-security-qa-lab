@@ -1,0 +1,68 @@
+[
+  {
+    "timestamp": "2026-10-22T04:00:10.000Z",
+    "event_type": "login_failure",
+    "source_ip": "198.51.100.42",
+    "username": "admin",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Python-urllib/3.10"
+  },
+  {
+    "timestamp": "2026-10-22T04:00:25.000Z",
+    "event_type": "login_failure",
+    "source_ip": "198.51.100.42",
+    "username": "root",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Python-urllib/3.10"
+  },
+  {
+    "timestamp": "2026-10-22T04:00:40.000Z",
+    "event_type": "login_failure",
+    "source_ip": "198.51.100.42",
+    "username": "administrator",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Python-urllib/3.10"
+  },
+  {
+    "timestamp": "2026-10-22T04:00:55.000Z",
+    "event_type": "login_failure",
+    "source_ip": "198.51.100.42",
+    "username": "user@demo.local",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Python-urllib/3.10"
+  },
+  {
+    "timestamp": "2026-10-22T04:01:10.000Z",
+    "event_type": "login_failure",
+    "source_ip": "198.51.100.42",
+    "username": "admin@demo.local",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Python-urllib/3.10"
+  },
+  {
+    "timestamp": "2026-10-22T04:02:00.000Z",
+    "event_type": "login_failure",
+    "source_ip": "203.0.113.10",
+    "username": "user@demo.local",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Chrome/120.0.0.0"
+  },
+  {
+    "timestamp": "2026-10-22T04:02:30.000Z",
+    "event_type": "login_success",
+    "source_ip": "203.0.113.10",
+    "username": "user@demo.local",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Chrome/120.0.0.0"
+  },
+  {
+    "timestamp": "2026-10-22T04:03:00.000Z",
+    "event_type": "login_success",
+    "source_ip": "192.0.2.1",
+    "username": "admin@demo.local",
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) Firefox/122.0"
+  },
+  {
+    "timestamp": "INVALID_TIMESTAMP_CORRUPT",
+    "event_type": "login_failure",
+    "source_ip": "198.51.100.99",
+    "username": "broken_log_entry"
+  },
+  {
+    "event_type": "login_failure",
+    "username": "missing_ip"
+  }
+]

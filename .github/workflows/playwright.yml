@@ -1,0 +1,60 @@
+name: Playwright Security QA & DevSecOps CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  security-qa-pipeline:
+    name: Security QA & Automated Testing
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Install Playwright Browsers & System Dependencies
+        run: npx playwright install --with-deps chromium
+
+      - name: Run TypeScript Type Check & Static Analysis
+        run: npm run typecheck
+
+      - name: Execute Detection Engineering Unit & Integration Tests
+        run: npm run test:detection
+
+      - name: Execute Playwright Security & E2E Test Suites
+        run: npm run test:e2e
+        env:
+          CI: true
+
+      - name: Publish Playwright HTML Test Report
+        uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-html-report
+          path: playwright-report/
+          retention-days: 30
+
+      - name: Publish Failure Diagnostics & Traces
+        uses: actions/upload-artifact@v4
+        if: ${{ failure() }}
+        with:
+          name: test-failure-diagnostics
+          path: test-results/
+          retention-days: 14

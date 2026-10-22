@@ -1,0 +1,51 @@
+{
+  "name": "playwright-security-qa-lab",
+  "version": "1.0.0",
+  "description": "Professional Security QA & Playwright Automation Lab with RBAC, Security Headers, API Testing, and Detection Engineering",
+  "main": "src/server.ts",
+  "scripts": {
+    "start": "tsx src/server.ts",
+    "start:server": "tsx src/server.ts",
+    "test": "npm run test:detection && npm run test:e2e",
+    "test:detection": "node --test detection/detection.test.js",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:headed": "playwright test --headed",
+    "test:auth": "playwright test tests/auth.spec.ts",
+    "test:access-control": "playwright test tests/access-control.spec.ts",
+    "test:functional": "playwright test tests/functional.spec.ts",
+    "test:api": "playwright test tests/api.spec.ts",
+    "test:security-headers": "playwright test tests/security-headers.spec.ts",
+    "test:report": "playwright show-report",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit"
+  },
+  "keywords": [
+    "playwright",
+    "security-qa",
+    "application-security",
+    "appsec",
+    "rbac",
+    "api-testing",
+    "detection-engineering",
+    "devsecops",
+    "qa-automation"
+  ],
+  "author": "Security QA Engineer",
+  "license": "MIT",
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "helmet": "^8.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "@types/cookie-parser": "^1.4.8",
+    "@types/express": "^5.0.0",
+    "@types/express-session": "^1.18.0",
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
