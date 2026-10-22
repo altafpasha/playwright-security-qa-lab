@@ -17,7 +17,7 @@ flowchart TB
     subgraph ClientLayer["Client & Automation Layer"]
         PW_UI["Playwright Browser Context\n(Chromium Page / DOM)"]
         PW_API["Playwright APIRequestContext\n(Headless HTTP Client)"]
-        UserBrowser["Recruiter / Manual Browser\n(Standard Client)"]
+        UserBrowser["Manual Browser Client\n(Standard User/Admin)"]
     end
 
     subgraph SecurityMiddlewareLayer["Express Defense-in-Depth Middleware"]

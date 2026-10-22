@@ -25,7 +25,6 @@
 - [Debugging, Traces & Playwright HTML Reports](#-debugging-traces--playwright-html-reports)
 - [Custom Detection Rule (SEC-DET-001)](#-custom-detection-rule-sec-det-001)
 - [CI/CD DevSecOps Automation](#-cicd-devsecops-automation)
-- [3-to-5 Minute Recruiter Demonstration Script](#-3-to-5-minute-recruiter-demonstration-script)
 - [Limitations & Production Hardening Roadmap](#-limitations--production-hardening-roadmap)
 - [Publishing to GitHub Guide](#-publishing-to-github-guide)
 
@@ -404,31 +403,6 @@ flowchart LR
     E2E --> PublishReport[Publish Playwright HTML Artifact]
     E2E --> PublishTrace[Publish Failure Traces on Error]
 ```
-
----
-
-## 🎙️ 3-to-5 Minute Recruiter Demonstration Script
-
-Use this structured script when presenting this project during a technical walkthrough or architecture review:
-
-### Minute 0:00 - 1:00: Hook & Portfolio Overview
-> *"Hello! Today I’m showcasing my Playwright Security QA Automation Lab. The goal of this project was to demonstrate how we bridge traditional functional QA automation with modern application security and DevSecOps. Rather than treating security as an isolated audit, I’ve built an automated test harness that continuously tests authentication, server-side RBAC, API sanitization, and security headers alongside normal functional workflows."*
-
-### Minute 1:00 - 2:30: Live Terminal Execution & Architecture
-> *(Action: Run `npm test` in the terminal)*
-> *"As you can see, the test runner executes 7 detection rule unit tests and 33 Playwright tests in under 8 seconds. Under the hood, Playwright automatically spins up our target Express web application. 
-> 
-> Let's look at `tests/access-control.spec.ts`. Here, we don't just verify that an admin button is hidden in the UI. We verify that when a standard user performs forced browsing to `/admin` or directly calls `GET /api/admin/users`, the server strictly responds with an HTTP 403 Forbidden. We use Playwright’s APIRequestContext to validate HTTP status codes and ensure our server-side authorization guards cannot be bypassed by client-side tampering."*
-
-### Minute 2:30 - 3:45: Security Headers & Detection Engineering
-> *"In `tests/security-headers.spec.ts`, we validate defense-in-depth: Content-Security-Policy directives, Clickjacking denial, anti-MIME sniffing, and aggressive anti-caching directives (`Cache-Control: no-store`) on sensitive endpoints.
-> 
-> Furthermore, in `detection/detect-bruteforce.js`, I built a custom detection engineering rule. It ingests synthetic authentication logs and uses a two-pointer sliding-window algorithm to detect repeated login failures per IP. In the unit tests, we prove it triggers on exact thresholds, ignores successful logins, and rejects corrupt logs."*
-
-### Minute 3:45 - 5:00: DevSecOps CI/CD & Real-World Trade-Offs
-> *"Everything is wired into GitHub Actions. If a developer accidentally comments out a Helmet header or introduces an authorization bypass, CI breaks immediately and uploads traces for instant debugging.
-> 
-> As an AppSec-minded engineer, I also document the limitations in `docs/limitations.md`—discussing NAT false positives, distributed credential stuffing, and our production roadmap to Argon2id and Redis sessions. I’m happy to dive deeper into any of these areas!"*
 
 ---
 
