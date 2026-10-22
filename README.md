@@ -26,7 +26,6 @@
 - [Custom Detection Rule (SEC-DET-001)](#-custom-detection-rule-sec-det-001)
 - [CI/CD DevSecOps Automation](#-cicd-devsecops-automation)
 - [3-to-5 Minute Recruiter Demonstration Script](#-3-to-5-minute-recruiter-demonstration-script)
-- [Interview Talking Points & Technical Q&A](#-interview-talking-points--technical-qa)
 - [Limitations & Production Hardening Roadmap](#-limitations--production-hardening-roadmap)
 - [Publishing to GitHub Guide](#-publishing-to-github-guide)
 
@@ -58,7 +57,7 @@ Traditional software teams suffer from two common disconnects:
   - **A02:2021 (Cryptographic & PII Failures)**: Assert sensitive credential fields are stripped from all API outputs.
   - **A05:2021 (Security Misconfiguration)**: Assert CSP, X-Frame-Options, noSniff, and anti-caching directives.
   - **A07:2021 (Identification & Authentication)**: Test user enumeration defenses, session invalidation, and session fixation mitigation.
-- Deliver an interview-ready project that any candidate or recruiter can clone, run, and explore within five minutes.
+- Deliver a production-grade portfolio project that any engineer or security reviewer can clone, run, and explore within five minutes.
 
 ---
 
@@ -410,7 +409,7 @@ flowchart LR
 
 ## 🎙️ 3-to-5 Minute Recruiter Demonstration Script
 
-Use this structured script when presenting this project during a technical screen or interview:
+Use this structured script when presenting this project during a technical walkthrough or architecture review:
 
 ### Minute 0:00 - 1:00: Hook & Portfolio Overview
 > *"Hello! Today I’m showcasing my Playwright Security QA Automation Lab. The goal of this project was to demonstrate how we bridge traditional functional QA automation with modern application security and DevSecOps. Rather than treating security as an isolated audit, I’ve built an automated test harness that continuously tests authentication, server-side RBAC, API sanitization, and security headers alongside normal functional workflows."*
@@ -430,18 +429,6 @@ Use this structured script when presenting this project during a technical scree
 > *"Everything is wired into GitHub Actions. If a developer accidentally comments out a Helmet header or introduces an authorization bypass, CI breaks immediately and uploads traces for instant debugging.
 > 
 > As an AppSec-minded engineer, I also document the limitations in `docs/limitations.md`—discussing NAT false positives, distributed credential stuffing, and our production roadmap to Argon2id and Redis sessions. I’m happy to dive deeper into any of these areas!"*
-
----
-
-## 💡 Interview Talking Points & Technical Q&A
-
-For quick recall before an interview:
-- **Why Playwright?** Browser context isolation allows multi-role testing (admin vs user) in parallel without cookie bleed; native `APIRequestContext` allows seamless API testing; auto-waiting eliminates flaky sleeps.
-- **Why is 401 distinct from 403?** 401 is unauthenticated (*who are you?*); 403 is unauthorized (*you are known, but forbidden*).
-- **Why generic login errors?** Prevents user enumeration (OWASP A07).
-- **Does CSP replace input sanitization?** No, CSP is defense-in-depth to restrict script execution contexts, not a substitute for server-side validation.
-
-For 25+ detailed questions and answers, see the [Interview Questions Guide](docs/interview-questions.md).
 
 ---
 

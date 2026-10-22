@@ -200,7 +200,7 @@ const renderLayout = (title: string, bodyContent: string, user?: { email: string
     ${bodyContent}
   </main>
   <footer class="app-footer">
-    <p>Playwright Security QA Lab &bull; Synthetic Demo Environment &bull; For Interview & Portfolio Evaluation Only</p>
+    <p>Playwright Security QA Lab &bull; Synthetic Demo Environment &bull; Portfolio & Security Evaluation Only</p>
   </footer>
   <script src="/static/app.js"></script>
 </body>

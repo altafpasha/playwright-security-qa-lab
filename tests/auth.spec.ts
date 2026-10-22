@@ -16,7 +16,7 @@ import { SESSION_COOKIE_NAME } from '../src/app';
  * - page.context().cookies(): Direct inspection of HTTP session cookies and flags.
  * - expect(locator).toBeVisible(): Auto-retrying assertions avoiding arbitrary sleeps.
  * 
- * Recruiter / Interviewer Talking Point:
+ * Security QA & AppSec Rationale:
  * "In this suite, we don't just verify the happy path. We test user enumeration defenses,
  * client-side input validation, clean session invalidation on logout, and that
  * protected routes reject unauthenticated access."

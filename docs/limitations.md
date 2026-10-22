@@ -7,7 +7,7 @@ This document outlines the operational boundaries, threat model scope, and produ
 ## 1. Project Scope & Threat Model Boundaries
 
 ### 1.1 Educational & Demonstration Purpose
-This repository is engineered specifically as a **Security QA & Playwright Automation Lab** for technical demonstration, portfolio evaluation, and candidate interview walkthroughs.
+This repository is engineered specifically as a **Security QA & Playwright Automation Lab** for technical demonstration, portfolio evaluation, and security architecture walkthroughs.
 - All credentials, accounts, and telemetry events are **synthetic** and strictly development-only.
 - The web server binds locally to `http://127.0.0.1:3333` and must never be exposed directly to the public Internet without production TLS and identity boundaries.
 
