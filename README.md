@@ -1,6 +1,6 @@
 # Playwright Security QA Automation Lab 🛡️
 
-[![CI Pipeline](https://github.com/your-username/playwright-security-qa-lab/actions/workflows/playwright.yml/badge.svg)](https://github.com/your-username/playwright-security-qa-lab/actions)
+[![CI Pipeline](https://github.com/altafpasha/playwright-security-qa-lab/actions/workflows/playwright.yml/badge.svg)](https://github.com/altafpasha/playwright-security-qa-lab/actions)
 [![Playwright Tests](https://img.shields.io/badge/playwright-33%20passed-brightgreen?logo=playwright)](https://playwright.dev/)
 [![Detection Rule Tests](https://img.shields.io/badge/detection%20tests-7%20passed-brightgreen?logo=node.js)](https://nodejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue?logo=typescript)](https://www.typescriptlang.org/)
@@ -138,7 +138,7 @@ For complete technical diagrams and data flow details, see the [Architecture Doc
 
 ### Step 1: Clone Repository
 ```bash
-git clone https://github.com/your-username/playwright-security-qa-lab.git
+git clone https://github.com/altafpasha/playwright-security-qa-lab.git
 cd playwright-security-qa-lab
 ```
 
@@ -474,7 +474,7 @@ git commit -m "feat: Initial release of Playwright Security QA Automation Lab"
 # Description: Professional Playwright Security QA Lab with RBAC, Security Headers, API Testing, and Detection Engineering
 
 # 4. Link your remote repository and push
-git remote add origin https://github.com/YOUR_GITHUB_USERNAME/playwright-security-qa-lab.git
+git remote add origin git@github.com:altafpasha/playwright-security-qa-lab.git
 git push -u origin main
 ```
 
